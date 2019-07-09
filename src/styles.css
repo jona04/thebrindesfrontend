@@ -1,1 +1,126 @@
-/* You can add global styles to this file, and also import other style files */
+.wrapper-content {
+    min-width: 100%;
+    min-height: 100%;
+    }
+.box-tile {
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    padding: 10px;
+    }
+.wrapper-content h1 {
+    font-size: 60pt;
+    color: #fff;
+    text-shadow: 2px 2px #333;
+    font-family: 'Crete Round', serif !important;
+    }
+.tag {
+    font-size: 2-pt;
+    color: chocolate;
+    font-weight: bold;
+    }
+.bg_img{
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    background: url("assets/banner_thebrindes.jpg") no-repeat;
+    background-size: cover;
+    }
+
+
+.titulo_categoria_index{
+    margin: 80px 0 20px 0;
+    font-size: 20px;
+}
+.list-items {
+    display: flex;
+  
+    justify-content: center;
+  
+    flex-flow: row wrap;
+    align-content: flex-end;
+  }
+.produto{
+    box-shadow: 1px 1px 10px grey;
+    margin: 10px 10px;
+    padding: 10px 0 25px 0;
+}
+.produto .titulo{
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight:600;
+    color: #666;
+    margin: 20px 0 0 0;
+}
+.produto .subtitulo{
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #666;
+    margin: 20px 0 0 0;
+}
+.produto .botao{
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #666;
+    margin: 20px 0 0 0;
+}
+.breadcrumb{
+    margin: 40px 0 0 0;
+    padding-top: 15px;
+    color: rgb(135, 135, 135);
+    border: #ccc solid 0.5px;
+}
+.borda{
+    border: #ccc solid 0.5px;
+}
+.breadcrumb li{
+    font-size: 13px;
+    margin: 0px 0 0px 0;
+}
+.breadcrumb li a{
+    font-weight: bold;
+}
+.breadcrumb .active{
+    font-weight: bold;
+
+}
+.form_busca{
+    margin: -1px 0 50px 0;
+}
+footer{
+    margin: 50px 0 0 0;
+    padding-top: 30px;
+    background-color:#006400;
+}
+.container_footer{
+    background-color: #f3f3f3;
+    border-radius: 20px;
+}
+.sub_footer_box{
+    border-radius: 20px;
+    padding: 10px
+}
+.footer_atendimento p{
+    margin: 10px 0 0 0;
+}
+.texto_footer{
+    color: white;
+    margin: 10px 0 0 0;
+    font-size: 12px
+}
+footer .footer_atendimento .titulo{
+    font-family: sans-serif;
+    font-size: 16px;
+    color: brown;
+}
+footer .footer_atendimento .descricao{
+    font-family: sans-serif;
+    font-size: 13px;
+    color: dimgrey;
+}

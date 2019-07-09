@@ -1,0 +1,108 @@
+<!-- DIV CONTEUDO INDEDx -->
+<div class="div_conteudo_index">
+    <div class="container">
+
+        <div class="row">
+            
+            <div class="col-sm-12">
+
+                <ol  class="breadcrumb bg-light">
+                        
+                    <li class="breadcrumb-item"><a href="">Inicio</a></li>
+                    <li class="breadcrumb-item"><a  routerLink="/categoria/{{categoria.slug}}" href="">{{ categoria.name }}</a></li>
+                    <li class="breadcrumb-item">{{ brinde.name }}</li>
+                </ol>
+        
+                <form #busca = "ngForm" (ngSubmit) = "onClickSubmitSearch(busca.value)">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ngModel name="campo_busca" placeholder="Pesquisar por todo o site...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Buscar !</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </form>
+
+            </div>
+        </div>
+        
+            <div class="row">
+                
+                <div class="titulo_categoria_index">
+                    <h1>{{ brinde.name }}</h1>
+                </div>
+            </div>  
+            <hr>  
+            <br>
+            <br>
+            <!-- <div class="row">
+                <div class="alert alert-success" role="alert">Orçamento solicitado com sucesso! Retornaremos seu pedido o mais rápido possível.</div>
+            </div> -->
+            <div class="row">  
+
+                <div class="col-sm-6">
+                    
+                        <img class="img-fluid" width="400" src="{{ brinde.image }}" alt="{{ brinde.name }}" />
+
+
+                </div>
+                <div class=" col-sm-6">
+                    
+                    <div class="jumbotron bg-light borda">
+                        <h3 class="text-center">Formulario de orçamento!</h3>
+                        <br /><br />
+
+                         <form #orcamento = "ngForm" (ngSubmit) = "onClickSubmitOrcamento(orcamento.value)">
+                                <div class="form-group">
+                                  <label class="font-weight-bold" for="nomeEmpresa">Nome / Empresa</label>
+                                  <input type="text" class="form-control" name="name" ngModel  placeholder="Seu nome ou nome de sua empresa">
+                                </div>
+                                <div class="form-group">
+                                  <label class="font-weight-bold" for="email">Email</label>
+                                  <input type="email" class="form-control" name="email" ngModel aria-describedby="emailHelp" placeholder="Seu email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="phone">Fone / Whatsapp</label>
+                                    <input type="text" class="form-control" name="phone" ngModel  placeholder="Informe seu contato">
+                                </div>
+                                <input type="hidden" name="brindes" ngModel [(ngModel)]="brinde.id">
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="quantity">Quantidade</label>
+                                    <input type="number" class="form-control" name="quantity" ngModel  placeholder="Quantidade desejada">
+                                </div>
+
+                                
+                                <button type="submit" class="btn btn-success">Enviar Orçamento!</button>
+                        </form> 
+
+                        <!-- <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
+                                <input type = "text" name = "emailid" placeholder = "emailid" ngModel>
+                                <br/>
+                                <input type = "password" name = "passwd" placeholder = "passwd" ngModel>
+                                <br/>
+                                <input type = "submit" value = "submit">
+                             </form> -->
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="card ">
+                    <div class="card-header alert-success">
+                            Informaçoes do produto
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ brinde.name }}</h5>
+                        <p class="card-text"> 
+                            {{ brinde.details }}
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+    </div>
+</div>
+<!-- FIM DIV CONTEUDO INDEDx -->

@@ -1,0 +1,53 @@
+<!-- DIV CONTEUDO INDEDx -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a href="">Inicio</a></li>
+                <li class="breadcrumb-item">{{ categoria.name }}</li>
+            
+                
+            </ol>
+
+            <form #busca = "ngForm" (ngSubmit) = "onClickSubmitSearch(busca.value)">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ngModel name="campo_busca" placeholder="Pesquisar por todo o site...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Buscar !</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </form>
+            
+<br><br>
+             <div class="">
+                <h1>{{ categoria.name }}</h1>
+            </div>
+            
+            <hr>
+            <br><br>
+            <!-- {% for brinde in categoria.brindes.all %}
+                {% if brinde.is_active == True %} -->
+             <div class="row">
+                <div *ngFor="let brinde of brindes" class="list-items">
+                    <a routerLink="/brindes/{{categoria.slug}}/{{brinde.slug}}" *ngIf="brinde.categoria==categoria.id && brinde.is_active==true">
+                        <div class="produto text-center">
+                        
+                        <div class="img">
+
+                                <img class="img-fluid" width="350" src="{{ brinde.image }}" alt="{{ brinde.image }}" />
+                     
+                        </div>
+                        <div class="titulo">{{ brinde.name }}</div>
+                        <div class="subtitulo">{{ brinde.subname }}</div>
+                        <div class="botao">
+                          <a routerLink="/brindes/{{categoria.slug}}/{{brinde.slug}}" class="btn btn-success">Fazer orçamento</a>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIM DIV CONTEUDO INDEDx -->

@@ -1,0 +1,62 @@
+
+<video  autoplay muted loop playsinline poster="../../assets/poster.png" class="wrapper-content">
+	<source src="../../assets/video_content_mp4.m4v" type="video/mp4">
+</video>
+
+<!-- <div class="wrapper-content">
+    <div class="box-tile">
+    <h1><span class="tag">#</span>
+      <span class="typing-element"></span>
+    </h1>
+    </div>
+    <div class="bg_img"></div>
+</div> -->
+
+<div class="div_conteudo_index">
+  <div class="container">
+    <br>
+      <form #busca = "ngForm" (ngSubmit) = "onClickSubmitSearch(busca.value)">
+          <div class="input-group">
+              <input type="text" class="form-control" ngModel name="campo_busca" placeholder="Pesquisar por todo o site...">
+              <span class="input-group-btn">
+              <button class="btn btn-success" type="submit">Buscar !</button>
+              </span>
+          </div><!-- /input-group -->
+      </form>
+
+
+    <div *ngFor="let categoria of categorias" class="row">
+      <div class="col-sm-12">
+          <div class="titulo_categoria_index clearfix">
+              <a routerLink="/categoria/{{categoria.slug}}" class="float-left nome_categoria">
+                  {{ categoria.name }}
+              </a>
+
+              <a routerLink="/categoria/{{categoria.slug}}" class="float-right nome_categoria">
+                  Ver mais
+              </a>
+          </div>
+          <hr>
+          <div class="row">
+            <div *ngFor="let brinde of brindes" class="list-items">
+              <a routerLink="/brindes/{{categoria.slug}}/{{brinde.slug}}" *ngIf="brinde.categoria==categoria.id && brinde.is_active==true">
+                  
+                  <div class="produto text-center">
+
+                      <div class="img">
+                              <img class="img-fluid" width="350" src="{{ brinde.image }}" alt="{{ brinde.name }}" />
+
+                      </div>
+                      <div class="titulo">{{ brinde.name }}</div>
+                      <div class="subtitulo">{{ brinde.subname }}</div>
+                      <div class="botao">
+                          <a routerLink="/brindes/{{categoria.slug}}/{{brinde.slug}}" class="btn btn-success">Fazer orçamento</a>
+                      </div>
+                  </div>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
