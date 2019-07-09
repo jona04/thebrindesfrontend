@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import Typed from 'typed.js';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -13,7 +14,7 @@ export class ContentComponent implements OnInit {
   brindes = [{}];
   selectedMovie;
 
-  constructor(private api:ApiService){
+  constructor(private api:ApiService,private router: Router){
 
     this.getCategorias();
     this.getBrindes();
@@ -55,6 +56,10 @@ export class ContentComponent implements OnInit {
       loop: true
       };
       const typed = new Typed('.typing-element', options);
+  }
+
+  onClickSubmitSearch(busca) {
+    this.router.navigateByUrl('/busca/'+busca.campo_busca);
   }
 
 }
