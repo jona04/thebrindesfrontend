@@ -6,6 +6,9 @@
     </div>
   </div>
   <div class="row">
+
+      
+
     <div class="col m6 imagens">
         <!--<div class="row">
   
@@ -26,6 +29,11 @@
           </div>
         </div>  -->
         
+
+        <span *ngFor="let artecaneca of artescanecas">
+            <img width="200px" src="{{ artecaneca.image }}" (click)="local = {{ artecaneca.image }}"/>
+        </span>
+
         
         <img width="200px" src="../assets/img1.png" (click)="local = '../assets/img1.png'"/>
         <img width="200px" src="../assets/img2.png" (click)="local = '../assets/img2.png'"/>

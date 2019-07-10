@@ -16,6 +16,12 @@ getAllCategorias(): Observable<any>{
   );
 }
 
+getAllArtesCanecas(): Observable<any>{
+  return this.http.get(this.baseurl+'/api/artecaneca/',
+    {headers: this.httpHeaders}
+  );
+}
+
 getAllBrindes(): Observable<any>{
   return this.http.get(this.baseurl+'/api/brinde/',
     {headers: this.httpHeaders}

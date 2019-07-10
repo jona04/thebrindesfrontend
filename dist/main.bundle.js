@@ -40,6 +40,9 @@ var ApiService = (function () {
     ApiService.prototype.getAllCategorias = function () {
         return this.http.get(this.baseurl + '/api/categoria/', { headers: this.httpHeaders });
     };
+    ApiService.prototype.getAllArtesCanecas = function () {
+        return this.http.get(this.baseurl + '/api/artecaneca/', { headers: this.httpHeaders });
+    };
     ApiService.prototype.getAllBrindes = function () {
         return this.http.get(this.baseurl + '/api/brinde/', { headers: this.httpHeaders });
     };
@@ -902,7 +905,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/personalizar/personalizar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"fundo\">\n  <div class=\"row\">\n    <div class=\"texto\">\n    <h4 class=\"center-align\">Clique em uma das nossas artes prontas para visualizar na caneca.</h4>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col m6 imagens\">\n        <!--<div class=\"row\">\n  \n            <div #container id=\"caixa2\" class=\"caixa\" (mousemove)=\"onMouseMove($event)\">\n                <div #draggable class=\"draggable\"\n                      (mousedown)=\"onMouseButton($event)\"\n                      (mouseup)=\"onMouseButton($event)\">\n                </div>\n  \n                <div #draggable class=\"draggable\"\n                    (mousedown)=\"onMouseButton($event)\"\n                    (mouseup)=\"onMouseButton($event)\">\n              </div>\n            </div>\n            <button class=\"btn\" (click)=\"evento()\" >click</button>\n          <div class=\"campo_edit\">\n                <img  [ng2-draggable]=\"true\" (click)=\"toggle($event)\" draggable=\"false\" width=\"200px\" src=\"../assets/img1.png\" (click)=\"local = '../assets/img1.png'\"/>\n          </div>\n        </div>  -->\n        \n        \n        <img width=\"200px\" src=\"../assets/img1.png\" (click)=\"local = '../assets/img1.png'\"/>\n        <img width=\"200px\" src=\"../assets/img2.png\" (click)=\"local = '../assets/img2.png'\"/>\n        <img width=\"200px\" src=\"../assets/img3.png\" (click)=\"local = '../assets/img3.png'\"/>\n        <img width=\"200px\" src=\"../assets/img4.png\" (click)=\"local = '../assets/img4.png'\"/>\n        <img width=\"200px\" src=\"../assets/img5.png\" (click)=\"local = '../assets/img5.png'\"/>\n        <img width=\"200px\" src=\"../assets/img6.png\" (click)=\"local = '../assets/img6.png'\"/>\n        <img width=\"200px\" src=\"../assets/img7.png\" (click)=\"local = '../assets/img7.png'\"/>\n        <img width=\"200px\" src=\"../assets/img8.png\" (click)=\"local = '../assets/img8.png'\"/>\n        <img width=\"200px\" src=\"../assets/img9.png\" (click)=\"local = '../assets/img9.png'\"/>\n    </div>        \n  \n    \n  \n  \n    <div class=\"col m6\">\n      <section class=\"container\">\n        <div id=\"carousel\">\n        \n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 7 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 8 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 9 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local_aba+')' }\"></figure> <!-- aba -->\n          <figure>1</figure> <!-- 1 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 2 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 3 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 4 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 5 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 6 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local_aba+')' }\"> </figure> <!-- aba -->\n        </div>\n      </section>\n    </div>\n  </div>\n  </div>"
+module.exports = "\n<div class=\"fundo\">\n  <div class=\"row\">\n    <div class=\"texto\">\n    <h4 class=\"center-align\">Clique em uma das nossas artes prontas para visualizar na caneca.</h4>\n    </div>\n  </div>\n  <div class=\"row\">\n\n      \n\n    <div class=\"col m6 imagens\">\n        <!--<div class=\"row\">\n  \n            <div #container id=\"caixa2\" class=\"caixa\" (mousemove)=\"onMouseMove($event)\">\n                <div #draggable class=\"draggable\"\n                      (mousedown)=\"onMouseButton($event)\"\n                      (mouseup)=\"onMouseButton($event)\">\n                </div>\n  \n                <div #draggable class=\"draggable\"\n                    (mousedown)=\"onMouseButton($event)\"\n                    (mouseup)=\"onMouseButton($event)\">\n              </div>\n            </div>\n            <button class=\"btn\" (click)=\"evento()\" >click</button>\n          <div class=\"campo_edit\">\n                <img  [ng2-draggable]=\"true\" (click)=\"toggle($event)\" draggable=\"false\" width=\"200px\" src=\"../assets/img1.png\" (click)=\"local = '../assets/img1.png'\"/>\n          </div>\n        </div>  -->\n        \n\n        <span *ngFor=\"let artecaneca of artescanecas\">\n            <img width=\"200px\" src=\"{{ artecaneca.image }}\" (click)=\"local = {{ artecaneca.image }}\"/>\n        </span>\n\n        \n        <img width=\"200px\" src=\"../assets/img1.png\" (click)=\"local = '../assets/img1.png'\"/>\n        <img width=\"200px\" src=\"../assets/img2.png\" (click)=\"local = '../assets/img2.png'\"/>\n        <img width=\"200px\" src=\"../assets/img3.png\" (click)=\"local = '../assets/img3.png'\"/>\n        <img width=\"200px\" src=\"../assets/img4.png\" (click)=\"local = '../assets/img4.png'\"/>\n        <img width=\"200px\" src=\"../assets/img5.png\" (click)=\"local = '../assets/img5.png'\"/>\n        <img width=\"200px\" src=\"../assets/img6.png\" (click)=\"local = '../assets/img6.png'\"/>\n        <img width=\"200px\" src=\"../assets/img7.png\" (click)=\"local = '../assets/img7.png'\"/>\n        <img width=\"200px\" src=\"../assets/img8.png\" (click)=\"local = '../assets/img8.png'\"/>\n        <img width=\"200px\" src=\"../assets/img9.png\" (click)=\"local = '../assets/img9.png'\"/>\n    </div>        \n  \n    \n  \n  \n    <div class=\"col m6\">\n      <section class=\"container\">\n        <div id=\"carousel\">\n        \n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 7 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 8 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 9 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local_aba+')' }\"></figure> <!-- aba -->\n          <figure>1</figure> <!-- 1 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 2 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 3 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 4 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 5 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> <!-- 6 -->\n          <figure [ngStyle]=\"{ 'background-image': 'url('+local_aba+')' }\"> </figure> <!-- aba -->\n        </div>\n      </section>\n    </div>\n  </div>\n  </div>"
 
 /***/ }),
 
@@ -911,6 +914,7 @@ module.exports = "\n<div class=\"fundo\">\n  <div class=\"row\">\n    <div class
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_service__ = __webpack_require__("../../../../../src/app/api.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonalizarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -922,13 +926,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var PersonalizarComponent = (function () {
-    function PersonalizarComponent() {
+    function PersonalizarComponent(api) {
+        var _this = this;
+        this.api = api;
         this.title = 'app';
         this.source = "../../assets/img2.png";
         this.color = "red";
         this.local = "../../assets/img1.png";
         this.local_aba = "../../assets/img_aba.png";
+        this.artescanecas = [{}];
+        this.getArtesCanecas = function () {
+            _this.api.getAllArtesCanecas().subscribe(function (data) {
+                _this.artescanecas = data;
+            }, function (error) {
+                console.log(error);
+            });
+        };
+        this.getArtesCanecas();
     }
     PersonalizarComponent.prototype.ngOnInit = function () {
     };
@@ -940,9 +956,10 @@ PersonalizarComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/personalizar/personalizar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/personalizar/personalizar.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */]) === "function" && _a || Object])
 ], PersonalizarComponent);
 
+var _a;
 //# sourceMappingURL=personalizar.component.js.map
 
 /***/ }),

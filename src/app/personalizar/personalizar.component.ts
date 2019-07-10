@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-personalizar',
@@ -15,8 +16,23 @@ export class PersonalizarComponent implements OnInit {
   local = "../../assets/img1.png";
   local_aba = "../../assets/img_aba.png";
 
+  artescanecas = [{}];
 
-  constructor() { }
+  constructor(private api:ApiService) {
+    this.getArtesCanecas();
+   }
+
+
+  getArtesCanecas = () => {
+    this.api.getAllArtesCanecas().subscribe(
+      data => {
+        this.artescanecas = data;
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
 
   ngOnInit() {
   }
