@@ -1,0 +1,114 @@
+.fundo{
+    padding: 50px;
+  }
+  .texto{
+    width: 1000px;
+    margin: 0 auto 0 auto;
+  }
+  .imagens{
+    margin-top:70px;
+  }
+  h3 {
+      font-size: 30pt;
+      color: #fff;
+      text-shadow: 2px 2px #333;
+      font-family: 'Crete Round', serif !important;
+      }
+  
+  
+    .campo_edit{
+  
+      width: 400px;
+      height: 400px;
+      background: #00f;
+    }
+  
+    .caixa {
+      height: 400px;
+      width: 840px;
+      border: 1px solid grey;
+      box-shadow: 5px 5px 5px grey;
+  
+      background-color:#FFFFFF;
+    }
+    .draggable {
+        height: 100px;
+        width: 100px;
+        background-color: Green;
+        position: absolute;
+        cursor: move;
+    }
+  
+  
+    /* keyframes for rotating animation */
+    @-webkit-keyframes spin {
+      from { transform: rotateY(130deg); }
+      to   { transform: rotateY(-10deg); }
+    }
+  
+    @keyframes spin {
+      from { transform: rotateY(130deg); }
+      to   { transform: rotateY(-10deg); }
+    }
+    
+    
+    .container {
+      width: 105px;
+      height: 400px;
+      position: relative;
+      perspective: 1400px;
+      margin: 10px auto;
+    }
+    
+    #carousel {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: spin 15s infinite linear;
+      transition: all 1s linear;
+      
+    }
+    
+    #carousel figure {
+      /* background-image: url('../assets/img2.png'); */
+      margin: 0;
+      display: block;
+      position: absolute;
+      /* background-color:#ccc; */
+      
+      width: 105px;
+      height: 400px;
+      left: 10px;
+      top: 10px;
+    }
+    
+    
+    
+    #carousel figure:nth-child(1) { background-position: 315px 0px; transform: rotateY(   0deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(2) { background-position: 210px 0px; transform: rotateY(  36deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(3) { background-position: 105px 0px; transform: rotateY(  72deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(4) { background-image: url("../../assets/img3.png"); width: 110px; transform: rotateY(   60deg ) translateZ( 0px ) translateX( 210px ); }
+    #carousel figure:nth-child(5) { transform: rotateY( 144deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(6) { background-position: 840px 0px; transform: rotateY( 180deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(7) { background-position: 735px 0px; transform: rotateY( 216deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(8) { background-position: 630px 0px; transform: rotateY( 252deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(9) { background-position: 525px 0px; transform: rotateY( 288deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(10) { background-position: 420px 0px; transform: rotateY( 324deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(11) { background-image: url("../../assets/img3.png"); width: 110px; transform: rotateY(   0deg ) translateZ( 0px ) translateX( 210px ); }
+    
+    /* esse é para o fundo primeiro, a a imagem cinza por tras feito no corel  */
+  /*
+  #carousel figure:nth-child(1) { background-position: 370px 0px; transform: rotateY(   0deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(2) { background-position: 265px 0px; transform: rotateY(  36deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(3) { background-position: 160px 0px; transform: rotateY(  72deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(4) { background-image: url("../assets/img3.png"); width: 110px; transform: rotateY(   60deg ) translateZ( 0px ) translateX( 210px ); }
+    #carousel figure:nth-child(5) { background-position: 1000px 0px; transform: rotateY( 144deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(6) { background-position: 895px 0px; transform: rotateY( 180deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(7) { background-position: 790px 0px; transform: rotateY( 216deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(8) { background-position: 685px 0px; transform: rotateY( 252deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(9) { background-position: 580px 0px; transform: rotateY( 288deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(10) { background-position: 475px 0px; transform: rotateY( 324deg ) translateZ( 161px ); }
+    #carousel figure:nth-child(11) { background-image: url("../assets/img3.png"); width: 110px; transform: rotateY(   0deg ) translateZ( 0px ) translateX( 210px ); }
+    
+    */

@@ -15,6 +15,7 @@ import { EmpresaComponent } from './empresa/empresa.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { BrindesComponent } from './brindes/brindes.component';
 import { BuscaComponent } from './busca/busca.component';
+import { PersonalizarComponent } from './personalizar/personalizar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BuscaComponent } from './busca/busca.component';
     EmpresaComponent,
     CategoriaComponent,
     BrindesComponent,
-    BuscaComponent
+    BuscaComponent,
+    PersonalizarComponent
   ],
   imports: [
     BrowserModule,

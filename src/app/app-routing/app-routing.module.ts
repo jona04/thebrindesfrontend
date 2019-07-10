@@ -1,3 +1,4 @@
+import { PersonalizarComponent } from './../personalizar/personalizar.component';
 import { BuscaComponent } from './../busca/busca.component';
 import { BrindesComponent } from './../brindes/brindes.component';
 import { ContentComponent } from './../content/content.component';
@@ -12,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', component: ContentComponent },
   { path: 'empresa', component: EmpresaComponent },
+  { path: 'personalizar-caneca-porcelana', component: PersonalizarComponent },
   { path: 'categoria/:slug', component: CategoriaComponent },
   { path: 'brindes/:categoria/:brinde', component: BrindesComponent },
   { path: 'busca/:busca', component: BuscaComponent },
