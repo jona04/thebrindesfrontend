@@ -12,7 +12,7 @@ export class PersonalizarComponent implements OnInit {
   private myDiv;
 
   color = "red";
-  private local = "../../assets/img1.png";
+  local = "../../assets/img1.png";
   local_aba = "../../assets/img_aba.png";
 
 
