@@ -1,71 +1,72 @@
 
 <div class="fundo">
-  <div class="row">
-    <div class="texto">
-    <h4 class="center-align">Clique em uma das nossas artes prontas para visualizar na caneca.</h4>
-    </div>
-  </div>
-  <div class="row">
 
-      
-
-    <div class="col m6 imagens">
-        <!--<div class="row">
-  
-            <div #container id="caixa2" class="caixa" (mousemove)="onMouseMove($event)">
-                <div #draggable class="draggable"
-                      (mousedown)="onMouseButton($event)"
-                      (mouseup)="onMouseButton($event)">
-                </div>
-  
-                <div #draggable class="draggable"
-                    (mousedown)="onMouseButton($event)"
-                    (mouseup)="onMouseButton($event)">
-              </div>
-            </div>
-            <button class="btn" (click)="evento()" >click</button>
-          <div class="campo_edit">
-                <img  [ng2-draggable]="true" (click)="toggle($event)" draggable="false" width="200px" src="../assets/img1.png" (click)="local = '../assets/img1.png'"/>
-          </div>
-        </div>  -->
-        
-
-        <span *ngFor="let artecaneca of artescanecas">
-            <img width="200px" src="{{ artecaneca.image }}" (click)="local = {{ artecaneca.image }}"/>
-        </span>
-
-        
-        <img width="200px" src="../assets/img1.png" (click)="local = '../assets/img1.png'"/>
-        <img width="200px" src="../assets/img2.png" (click)="local = '../assets/img2.png'"/>
-        <img width="200px" src="../assets/img3.png" (click)="local = '../assets/img3.png'"/>
-        <img width="200px" src="../assets/img4.png" (click)="local = '../assets/img4.png'"/>
-        <img width="200px" src="../assets/img5.png" (click)="local = '../assets/img5.png'"/>
-        <img width="200px" src="../assets/img6.png" (click)="local = '../assets/img6.png'"/>
-        <img width="200px" src="../assets/img7.png" (click)="local = '../assets/img7.png'"/>
-        <img width="200px" src="../assets/img8.png" (click)="local = '../assets/img8.png'"/>
-        <img width="200px" src="../assets/img9.png" (click)="local = '../assets/img9.png'"/>
-    </div>        
-  
-    
-  
-  
-    <div class="col m6">
-      <section class="container">
-        <div id="carousel">
-        
-          <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 7 -->
-          <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 8 -->
-          <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 9 -->
-          <figure [ngStyle]="{ 'background-image': 'url('+local_aba+')' }"></figure> <!-- aba -->
-          <figure>1</figure> <!-- 1 -->
-          <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 2 -->
-          <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 3 -->
-          <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 4 -->
-          <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 5 -->
-          <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 6 -->
-          <figure [ngStyle]="{ 'background-image': 'url('+local_aba+')' }"> </figure> <!-- aba -->
+    <div class="row">
+        <h4 class="center-align">Clique em uma das nossas artes prontas para visualizar na caneca.</h4>
         </div>
-      </section>
-    </div>
+
+  <div class="row">
+
+     
+          
+
+          <div class="col-sm-12 col-md-2">
+
+              
+
+
+                <span class="list-group" id="list-tab" role="tablist">
+                    <!-- <span *ngIf="isFirst">
+                        <a class="list-group-item list-group-item-action active" id="list-{{ artecaneca.slug }}-list" data-toggle="list" href="#list-{{ artecaneca.slug }}" role="tab" aria-controls="home">{{ artecaneca.name }}</a>
+                    </span> -->
+                    <a *ngFor="let categoria of categoriasarte"  (click)=teste(categoria.id)  class="list-group-item list-group-item-action" id="{{ categoria.slug }}-list" data-toggle="list" href="#{{ categoria.slug }}" role="tab">{{ categoria.name }}</a>
+              
+                    <!-- {{ artescanecas.length }} -->
+
+                    
+                </span>
+
+               
+              
+          </div>
+          <div class="col-sm-12 col-md-5">
+            <div class="tab-content" id="nav-tabContent">
+              <!-- <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                  <span *ngFor="let artecaneca of artescanecas">
+                      <img width="200px" src="{{ artecaneca.image_thumb }}" (click)="local = artecaneca.image"/>
+                  </span>
+                
+              </div> -->
+              
+                  <img *ngFor="let artecaneca of artescanecasNova" width="200px" src="{{ artecaneca.image_thumb }}" (click)="local = artecaneca.image"/>
+
+                
+              
+              
+
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-5">
+              <section class="container">
+                <div id="carousel">
+                
+                  <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 7 -->
+                  <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 8 -->
+                  <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 9 -->
+                  <figure [ngStyle]="{ 'background-image': 'url('+local_aba+')' }"></figure> <!-- aba -->
+                  <figure>1</figure> <!-- 1 -->
+                  <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 2 -->
+                  <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 3 -->
+                  <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 4 -->
+                  <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 5 -->
+                  <figure [ngStyle]="{ 'background-image': 'url('+local+')' }"></figure> <!-- 6 -->
+                  <figure [ngStyle]="{ 'background-image': 'url('+local_aba+')' }"> </figure> <!-- aba -->
+                </div>
+              </section>
+            </div>
+
+
+    
   </div>
   </div>

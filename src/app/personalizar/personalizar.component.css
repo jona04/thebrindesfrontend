@@ -1,13 +1,7 @@
 .fundo{
     padding: 50px;
   }
-  .texto{
-    width: 1000px;
-    margin: 0 auto 0 auto;
-  }
-  .imagens{
-    margin-top:70px;
-  }
+
   h3 {
       font-size: 30pt;
       color: #fff;
@@ -15,30 +9,7 @@
       font-family: 'Crete Round', serif !important;
       }
   
-  
-    .campo_edit{
-  
-      width: 400px;
-      height: 400px;
-      background: #00f;
-    }
-  
-    .caixa {
-      height: 400px;
-      width: 840px;
-      border: 1px solid grey;
-      box-shadow: 5px 5px 5px grey;
-  
-      background-color:#FFFFFF;
-    }
-    .draggable {
-        height: 100px;
-        width: 100px;
-        background-color: Green;
-        position: absolute;
-        cursor: move;
-    }
-  
+
   
     /* keyframes for rotating animation */
     @-webkit-keyframes spin {
