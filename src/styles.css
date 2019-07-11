@@ -1,3 +1,7 @@
+.margem_topo_fixo{
+    margin-top: 80px;
+}
+
 .wrapper-content {
     min-width: 100%;
     min-height: 100%;
