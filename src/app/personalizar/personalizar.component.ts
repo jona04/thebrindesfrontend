@@ -12,7 +12,7 @@ export class PersonalizarComponent implements OnInit {
   source = "../../assets/img2.png";
 
   color = "red";
-  local = "../../assets/img1.png";
+  local = "../../assets/img5.png";
   local_aba = "../../assets/img_aba.png";
 
   artescanecas = [{}];
