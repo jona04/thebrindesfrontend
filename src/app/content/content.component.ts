@@ -43,19 +43,19 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit() {
-    const options = {
-      stringsElement: '#typed-strings',
-      strings: ['Visualize sua caneca em 3D. Experimente!', 'Escolha sua arte, com apenas 1 clique.'],
-      typeSpeed: 100,
-      backSpeed: 200,
-      backDelay: 300,
-      smartBackspace: true,
-      fadeOut: true,
-      showCursor: false,
-      startDelay: 1000,
-      loop: true
-      };
-      const typed = new Typed('.typing-element', options);
+    // const options = {
+    //   stringsElement: '#typed-strings',
+    //   strings: ['Visualize sua caneca em 3D. Experimente!', 'Escolha sua arte, com apenas 1 clique.'],
+    //   typeSpeed: 100,
+    //   backSpeed: 200,
+    //   backDelay: 300,
+    //   smartBackspace: true,
+    //   fadeOut: true,
+    //   showCursor: false,
+    //   startDelay: 1000,
+    //   loop: true
+    //   };
+    //   const typed = new Typed('.typing-element', options);
   }
 
   onClickSubmitSearch(busca) {
