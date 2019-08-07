@@ -361,7 +361,7 @@ var BrindesComponent = (function () {
     BrindesComponent.prototype.onClickSubmitOrcamento = function (orcamento) {
         // alert(orcamento.brindes)
         this.api.createOrcamento(orcamento).subscribe(function (data) {
-            alert("enviado orcamento");
+            alert("Muito Obrigado!! Seu orçamento foi enviado com sucesso. Aguarde em quanto respondemos. Ou entre em contato em: (86) 99436-7255");
         }, function (error) {
             console.log(error);
         });
