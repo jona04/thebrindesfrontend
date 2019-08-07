@@ -3,12 +3,18 @@
     margin-top: 50px;
   }
 
+  .fundo_personalizar{
+    background-image: linear-gradient(green, white);
+    height: 120px;
+    margin-bottom: 20px;
+  }
   h3 {
       font-size: 30pt;
       color: #fff;
       text-shadow: 2px 2px #333;
       font-family: 'Crete Round', serif !important;
-      }
+      margin: 20px auto 0 auto;
+    }
   
 
   
