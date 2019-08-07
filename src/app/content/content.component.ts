@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import Typed from 'typed.js';
 import { Router } from '@angular/router';
+import { Title }     from '@angular/platform-browser';
 
 @Component({
   selector: 'app-content',
@@ -14,10 +14,15 @@ export class ContentComponent implements OnInit {
   brindes = [{}];
   selectedMovie;
 
-  constructor(private api:ApiService,private router: Router){
+  constructor(private api:ApiService,
+    private router: Router,
+    private titleService: Title){
 
     this.getCategorias();
     this.getBrindes();
+  }
+  public setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle  );
   }
 
   getCategorias = () => {
@@ -62,4 +67,5 @@ export class ContentComponent implements OnInit {
     this.router.navigateByUrl('/busca/'+busca.campo_busca);
   }
 
+  
 }

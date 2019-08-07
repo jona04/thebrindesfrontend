@@ -62,7 +62,7 @@ var ApiService = (function () {
     return ApiService;
 }());
 ApiService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpClient */]) === "function" && _a || Object])
 ], ApiService);
 
@@ -249,7 +249,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9__app_routing_app_routing_module__["a" /* AppRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */], __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["b" /* Title */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]],
         schemas: [__WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* CUSTOM_ELEMENTS_SCHEMA */]]
     })
@@ -591,7 +591,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/content.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<video  autoplay muted loop poster=\"../../assets/poster.png\" class=\"wrapper-content margem_topo_fixo\">\n\t<source src=\"../../assets/video_content_mp4.m4v\" type=\"video/mp4\">\n</video>\n\n<!-- <div class=\"wrapper-content\">\n    <div class=\"box-tile\">\n    <h1><span class=\"tag\">#</span>\n      <span class=\"typing-element\"></span>\n    </h1>\n    </div>\n    <div class=\"bg_img\"></div>\n</div> -->\n\n  <div class=\"container\">\n    <br>\n      <form #busca = \"ngForm\" (ngSubmit) = \"onClickSubmitSearch(busca.value)\">\n          <div class=\"input-group\">\n              <input type=\"text\" class=\"form-control\" ngModel name=\"campo_busca\" placeholder=\"Pesquisar por todo o site...\">\n              <span class=\"input-group-btn\">\n              <button class=\"btn btn-success\" type=\"submit\">Buscar !</button>\n              </span>\n          </div><!-- /input-group -->\n      </form>\n\n\n    <div *ngFor=\"let categoria of categorias\" class=\"row\">\n      <div class=\"col-sm-12\">\n          <div class=\"titulo_categoria_index clearfix\">\n              <a routerLink=\"/categoria/{{categoria.slug}}\" class=\"float-left nome_categoria\">\n                  {{ categoria.name }}\n              </a>\n\n              <a routerLink=\"/categoria/{{categoria.slug}}\" class=\"float-right nome_categoria\">\n                  Ver mais\n              </a>\n          </div>\n          <hr>\n          <div class=\"row\">\n            <div *ngFor=\"let brinde of brindes\" class=\"list-items\">\n              <a routerLink=\"/brindes/{{categoria.slug}}/{{brinde.slug}}\" *ngIf=\"brinde.categoria==categoria.id && brinde.is_active==true\">\n                  \n                  <div class=\"produto text-center\">\n\n                      <div class=\"img\">\n                              <img class=\"img-fluid\" width=\"350\" src=\"{{ brinde.image }}\" alt=\"{{ brinde.name }}\" />\n\n                      </div>\n                      <div class=\"titulo\">{{ brinde.name }}</div>\n                      <div class=\"subtitulo\">{{ brinde.subname }}</div>\n                      <div class=\"botao\">\n                          <a routerLink=\"/brindes/{{categoria.slug}}/{{brinde.slug}}\" class=\"btn btn-success\">Fazer orçamento</a>\n                      </div>\n                  </div>\n              </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>"
+module.exports = "\n<video  autoplay muted loop poster=\"../../assets/poster.png\" class=\"wrapper-content margem_topo_fixo\">\n\t<source src=\"../../assets/video_content_mp4.m4v\" type=\"video/mp4\">\n</video>\n\n<!-- <div class=\"wrapper-content\">\n    <div class=\"box-tile\">\n    <h1><span class=\"tag\">#</span>\n      <span class=\"typing-element\"></span>\n    </h1>\n    </div>\n    <div class=\"bg_img\"></div>\n</div> -->\n\n  <div class=\"container\">\n    <br>\n      <form #busca = \"ngForm\" (ngSubmit) = \"onClickSubmitSearch(busca.value)\">\n          <div class=\"input-group\">\n              <input type=\"text\" class=\"form-control\" ngModel name=\"campo_busca\" placeholder=\"Pesquisar por todo o site...\">\n              <span class=\"input-group-btn\">\n              <button class=\"btn btn-success\" type=\"submit\">Buscar !</button>\n              </span>\n          </div><!-- /input-group -->\n      </form>\n\n\n    <div *ngFor=\"let categoria of categorias\" class=\"row\">\n      <div class=\"col-sm-12\">\n          <div class=\"titulo_categoria_index clearfix\">\n              <a (click)=\"setTitle( 'THE Brindes - ' + categoria.name )\" routerLink=\"/categoria/{{categoria.slug}}\" class=\"float-left nome_categoria\">\n                  {{ categoria.name }}\n              </a>\n\n              <a (click)=\"setTitle( 'THE Brindes - ' + categoria.name )\" routerLink=\"/categoria/{{categoria.slug}}\" class=\"float-right nome_categoria\">\n                  Ver mais\n              </a>\n          </div>\n          <hr>\n          <div class=\"row\">\n            <div *ngFor=\"let brinde of brindes\" class=\"list-items\">\n              <a (click)=\"setTitle( 'THE Brindes - ' + brinde.name )\" routerLink=\"/brindes/{{categoria.slug}}/{{brinde.slug}}\" *ngIf=\"brinde.categoria==categoria.id && brinde.is_active==true\">\n                  \n                  <div class=\"produto text-center\">\n\n                      <div class=\"img\">\n                              <img class=\"img-fluid\" width=\"350\" src=\"{{ brinde.image }}\" alt=\"{{ brinde.name }}\" />\n\n                      </div>\n                      <div class=\"titulo\">{{ brinde.name }}</div>\n                      <div class=\"subtitulo\">{{ brinde.subname }}</div>\n                      <div class=\"botao\">\n                          <a routerLink=\"/brindes/{{categoria.slug}}/{{brinde.slug}}\" class=\"btn btn-success\">Fazer orçamento</a>\n                      </div>\n                  </div>\n              </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -602,6 +602,7 @@ module.exports = "\n<video  autoplay muted loop poster=\"../../assets/poster.png
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_service__ = __webpack_require__("../../../../../src/app/api.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContentComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -615,11 +616,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ContentComponent = (function () {
-    function ContentComponent(api, router) {
+    function ContentComponent(api, router, titleService) {
         var _this = this;
         this.api = api;
         this.router = router;
+        this.titleService = titleService;
         this.categorias = [{}];
         this.brindes = [{}];
         this.getCategorias = function () {
@@ -639,6 +642,9 @@ var ContentComponent = (function () {
         this.getCategorias();
         this.getBrindes();
     }
+    ContentComponent.prototype.setTitle = function (newTitle) {
+        this.titleService.setTitle(newTitle);
+    };
     ContentComponent.prototype.ngOnInit = function () {
         // const options = {
         //   stringsElement: '#typed-strings',
@@ -665,10 +671,10 @@ ContentComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/content/content.component.html"),
         styles: [__webpack_require__("../../../../../src/app/content/content.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["b" /* Title */]) === "function" && _c || Object])
 ], ContentComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=content.component.js.map
 
 /***/ }),

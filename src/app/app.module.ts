@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -35,7 +35,7 @@ import { PersonalizarComponent } from './personalizar/personalizar.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, Title],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

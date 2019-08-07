@@ -27,18 +27,18 @@
     <div *ngFor="let categoria of categorias" class="row">
       <div class="col-sm-12">
           <div class="titulo_categoria_index clearfix">
-              <a routerLink="/categoria/{{categoria.slug}}" class="float-left nome_categoria">
+              <a (click)="setTitle( 'THE Brindes - ' + categoria.name )" routerLink="/categoria/{{categoria.slug}}" class="float-left nome_categoria">
                   {{ categoria.name }}
               </a>
 
-              <a routerLink="/categoria/{{categoria.slug}}" class="float-right nome_categoria">
+              <a (click)="setTitle( 'THE Brindes - ' + categoria.name )" routerLink="/categoria/{{categoria.slug}}" class="float-right nome_categoria">
                   Ver mais
               </a>
           </div>
           <hr>
           <div class="row">
             <div *ngFor="let brinde of brindes" class="list-items">
-              <a routerLink="/brindes/{{categoria.slug}}/{{brinde.slug}}" *ngIf="brinde.categoria==categoria.id && brinde.is_active==true">
+              <a (click)="setTitle( 'THE Brindes - ' + brinde.name )" routerLink="/brindes/{{categoria.slug}}/{{brinde.slug}}" *ngIf="brinde.categoria==categoria.id && brinde.is_active==true">
                   
                   <div class="produto text-center">
 
