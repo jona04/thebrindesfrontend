@@ -1,0 +1,122 @@
+
+.card-header{
+    color: #fff;
+}
+.card-footer{
+    background-color: #fff;
+}
+
+/* keyframes for rotating animation */
+@-webkit-keyframes spin {
+    from { transform: rotateY(160deg); }
+    to   { transform: rotateY(-20deg); }
+  }
+
+  @keyframes spin {
+    from { transform: rotateY(160deg); }
+    to   { transform: rotateY(-20deg); }
+  }
+  
+  
+  .container_content {
+    width: 105px;
+    height: 400px;
+    position: relative;
+    perspective: 1400px;
+    margin: 10px auto;
+  }
+  
+  #carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: spin 10s infinite linear;
+    transition: all 1s linear;
+    
+  }
+/*     
+  #carousel figure {
+    margin: 0;
+    display: block;
+    position: absolute;
+    
+    width: 105px;
+    height: 400px;
+    left: 10px;
+    top: 10px;
+  }
+   */
+  
+  .aba{
+    background: #fff;
+   }   
+  #carousel figure {
+    margin: 0;
+    display: block;
+    position: absolute;
+    
+    width: 56px;
+    height: 400px;
+    left: 10px;
+    top: 10px;
+  }
+  
+  #carousel figure:nth-child(1) { background-position: 280px 0px; transform: rotateY( -3deg ) translateZ( 150px ); }
+
+  #carousel figure:nth-child(2) { background-position: 224px 0px; transform: rotateY( 18deg ) translateZ( 150px ); }
+  #carousel figure:nth-child(3) { background-position: 168px 0px; transform: rotateY(  39deg ) translateZ( 150px ); }
+  #carousel figure:nth-child(4) { background-position: 112px 0px; transform: rotateY( 60deg ) translateZ( 150px ); }
+  #carousel figure:nth-child(5) { background-position: 56px 0px; transform: rotateY(  81deg ) translateZ( 150px ); }
+  #carousel figure:nth-child(6) { background-image: url("../../assets/img3.png"); width: 115px; transform: rotateY(   60deg ) translateZ( 0px ) translateX( 190px ); }
+  #carousel figure:nth-child(7) { transform: rotateY( 147deg ) translateZ( 150px ); }
+  #carousel figure:nth-child(8) { background-position: 840px 0px; transform: rotateY( 147deg ) translateZ( 150px ); }
+  
+  #carousel figure:nth-child(9) { background-image: url("../../assets/img3.png"); width: 115px; transform: rotateY(   0deg ) translateZ( 0px ) translateX( 175px ); }
+
+  #carousel figure:nth-child(10) { background-position: 784px 0px; transform: rotateY( 168deg ) translateZ( 150px ); }
+  
+  #carousel figure:nth-child(11) { background-position: 728px 0px; transform: rotateY( 189deg ) translateZ( 150px ); }
+  #carousel figure:nth-child(12) { background-position: 672px 0px; transform: rotateY( 210deg ) translateZ( 150px ); }
+  #carousel figure:nth-child(13) { background-position: 616px 0px; transform: rotateY( 231deg ) translateZ( 150px ); }
+  #carousel figure:nth-child(14) { background-position: 560px 0px; transform: rotateY( 252deg ) translateZ( 150px ); }
+
+  
+  #carousel figure:nth-child(15) { background-position: 504px 0px; transform: rotateY( 273deg ) translateZ( 150px ); }
+  #carousel figure:nth-child(16) { background-position: 448px 0px; transform: rotateY( 294deg ) translateZ( 150px ); }
+
+  #carousel figure:nth-child(17) { background-position: 392px 0px; transform: rotateY( 315deg ) translateZ( 150px ); }
+ 
+  
+  #carousel figure:nth-child(18) { background-position: 336px 0px; transform: rotateY( 336deg ) translateZ( 150px ); }
+
+  
+
+  
+  /* #carousel figure:nth-child(1) { background-position: 315px 0px; transform: rotateY(   0deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(2) { background-position: 210px 0px; transform: rotateY(  36deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(3) { background-position: 105px 0px; transform: rotateY(  72deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(4) { background-image: url("../../assets/img3.png"); width: 110px; transform: rotateY(   60deg ) translateZ( 0px ) translateX( 210px ); }
+  #carousel figure:nth-child(5) { transform: rotateY( 144deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(6) { background-position: 840px 0px; transform: rotateY( 180deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(7) { background-position: 735px 0px; transform: rotateY( 216deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(8) { background-position: 630px 0px; transform: rotateY( 252deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(9) { background-position: 525px 0px; transform: rotateY( 288deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(10) { background-position: 420px 0px; transform: rotateY( 324deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(11) { background-image: url("../../assets/img3.png"); width: 110px; transform: rotateY(   0deg ) translateZ( 0px ) translateX( 210px ); }
+   */
+  /* esse é para o fundo primeiro, a a imagem cinza por tras feito no corel  */
+/*
+#carousel figure:nth-child(1) { background-position: 370px 0px; transform: rotateY(   0deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(2) { background-position: 265px 0px; transform: rotateY(  36deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(3) { background-position: 160px 0px; transform: rotateY(  72deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(4) { background-image: url("../assets/img3.png"); width: 110px; transform: rotateY(   60deg ) translateZ( 0px ) translateX( 210px ); }
+  #carousel figure:nth-child(5) { background-position: 1000px 0px; transform: rotateY( 144deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(6) { background-position: 895px 0px; transform: rotateY( 180deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(7) { background-position: 790px 0px; transform: rotateY( 216deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(8) { background-position: 685px 0px; transform: rotateY( 252deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(9) { background-position: 580px 0px; transform: rotateY( 288deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(10) { background-position: 475px 0px; transform: rotateY( 324deg ) translateZ( 161px ); }
+  #carousel figure:nth-child(11) { background-image: url("../assets/img3.png"); width: 110px; transform: rotateY(   0deg ) translateZ( 0px ) translateX( 210px ); }
+  
+  */

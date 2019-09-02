@@ -1,11 +1,4 @@
-webpackJsonp([2],{
-
-/***/ "../../../../../src/assets/banner_thebrindes.jpg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "banner_thebrindes.8dfd11fe6a01233d171f.jpg";
-
-/***/ }),
+webpackJsonp([3],{
 
 /***/ "../../../../../src/styles.css":
 /***/ (function(module, exports, __webpack_require__) {
@@ -64,13 +57,12 @@ if(false) {
 /***/ "../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../../src/styles.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".margem_topo_fixo{\n    margin-top: 80px;\n}\n\n.wrapper-content {\n    min-width: 100%;\n    min-height: 100%;\n    }\n.box-tile {\n    width: 500px;\n    height: 100px;\n    position: absolute;\n    top: 20%;\n    left: 10%;\n    padding: 10px;\n    }\n.wrapper-content h1 {\n    font-size: 60pt;\n    color: #fff;\n    text-shadow: 2px 2px #333;\n    font-family: 'Crete Round', serif !important;\n    }\n.tag {\n    font-size: 2-pt;\n    color: chocolate;\n    font-weight: bold;\n    }\n.bg_img{\n    right: 0;\n    bottom: 0;\n    min-width: 100%;\n    min-height: 100%;\n    width: auto;\n    height: auto;\n    z-index: -1000;\n    background: url(" + escape(__webpack_require__("../../../../../src/assets/banner_thebrindes.jpg")) + ") no-repeat;\n    background-size: cover;\n    }\n\n\n.titulo_categoria_index{\n    margin: 80px 0 20px 0;\n    font-size: 20px;\n}\n.list-items {\n    display: -ms-flexbox;\n    display: flex;\n  \n    -ms-flex-pack: center;\n  \n        justify-content: center;\n  \n    -ms-flex-flow: row wrap;\n  \n        flex-flow: row wrap;\n    -ms-flex-line-pack: end;\n        align-content: flex-end;\n  }\n.produto{\n    box-shadow: 1px 1px 10px grey;\n    margin: 10px 10px;\n    padding: 10px 0 25px 0;\n}\n.produto .titulo{\n    font-family: sans-serif;\n    font-size: 16px;\n    font-weight:600;\n    color: #666;\n    margin: 20px 0 0 0;\n}\n.produto .subtitulo{\n    font-family: sans-serif;\n    font-size: 16px;\n    color: #666;\n    margin: 20px 0 0 0;\n}\n.produto .botao{\n    font-family: sans-serif;\n    font-size: 16px;\n    color: #666;\n    margin: 20px 0 0 0;\n}\n.breadcrumb{\n    margin: 40px 0 0 0;\n    padding-top: 15px;\n    color: rgb(135, 135, 135);\n    border: #ccc solid 0.5px;\n}\n.borda{\n    border: #ccc solid 0.5px;\n}\n.breadcrumb li{\n    font-size: 13px;\n    margin: 0px 0 0px 0;\n}\n.breadcrumb li a{\n    font-weight: bold;\n}\n.breadcrumb .active{\n    font-weight: bold;\n\n}\n.form_busca{\n    margin: -1px 0 50px 0;\n}\nfooter{\n    margin: 50px 0 0 0;\n    padding-top: 30px;\n    background-color:#006400;\n}\n.container_footer{\n    background-color: #f3f3f3;\n    border-radius: 20px;\n}\n.sub_footer_box{\n    border-radius: 20px;\n    padding: 10px\n}\n.footer_atendimento p{\n    margin: 10px 0 0 0;\n}\n.texto_footer{\n    color: white;\n    margin: 10px 0 0 0;\n    font-size: 12px\n}\nfooter .footer_atendimento .titulo{\n    font-family: sans-serif;\n    font-size: 16px;\n    color: brown;\n}\nfooter .footer_atendimento .descricao{\n    font-family: sans-serif;\n    font-size: 13px;\n    color: dimgrey;\n}", ""]);
+exports.push([module.i, ".margem_topo_fixo{\n    margin-top: 80px;\n}\n\n.wrapper-contenttt {\n    min-height: 500px;\n    \n    }\n.box-tile {\n    width: 600px;\n    height: 450px;\n    margin: 150px 0 0 0;\n    float: left;\n    }\n.wrapper-content h1 {\n    font-size: 30pt;\n    color: rgb(5, 151, 5);\n    text-shadow: 1px 1px #333;\n    font-family: 'Crete Round', serif !important;\n    }\n.tag {\n    font-size: 2-pt;\n    color: rgb(5, 151, 5);\n    font-weight: bold;\n    }\n.bg_img{\n    width: 400px;\n    min-height: 500px;\n    float: right;\n    margin: 150px 0 0 0;\n    }\n\n\n.titulo_categoria_index{\n    margin: 80px 0 20px 0;\n    font-size: 20px;\n}\n.list-items {\n    display: -ms-flexbox;\n    display: flex;\n  \n    -ms-flex-pack: center;\n  \n        justify-content: center;\n  \n    -ms-flex-flow: row wrap;\n  \n        flex-flow: row wrap;\n    -ms-flex-line-pack: end;\n        align-content: flex-end;\n  }\n.produto{\n    box-shadow: 1px 1px 10px grey;\n    margin: 10px 10px;\n    padding: 10px 0 25px 0;\n}\n.produto .titulo{\n    font-family: sans-serif;\n    font-size: 16px;\n    font-weight:600;\n    color: #666;\n    margin: 20px 0 0 0;\n}\n.produto .subtitulo{\n    font-family: sans-serif;\n    font-size: 16px;\n    color: #666;\n    margin: 20px 0 0 0;\n}\n.produto .botao{\n    font-family: sans-serif;\n    font-size: 16px;\n    color: #666;\n    margin: 20px 0 0 0;\n}\n.breadcrumb{\n    margin: 40px 0 0 0;\n    padding-top: 15px;\n    color: rgb(135, 135, 135);\n    border: #ccc solid 0.5px;\n}\n.borda{\n    border: #ccc solid 0.5px;\n}\n.breadcrumb li{\n    font-size: 13px;\n    margin: 0px 0 0px 0;\n}\n.breadcrumb li a{\n    font-weight: bold;\n}\n.breadcrumb .active{\n    font-weight: bold;\n\n}\n.form_busca{\n    margin: -1px 0 50px 0;\n}\nfooter{\n    margin: 50px 0 0 0;\n    padding-top: 30px;\n    background-color:#006400;\n}\n.container_footer{\n    background-color: #f3f3f3;\n    border-radius: 20px;\n}\n.sub_footer_box{\n    border-radius: 20px;\n    padding: 10px\n}\n.footer_atendimento p{\n    margin: 10px 0 0 0;\n}\n.texto_footer{\n    color: white;\n    margin: 10px 0 0 0;\n    font-size: 12px\n}\nfooter .footer_atendimento .titulo{\n    font-family: sans-serif;\n    font-size: 16px;\n    color: brown;\n}\nfooter .footer_atendimento .descricao{\n    font-family: sans-serif;\n    font-size: 13px;\n    color: dimgrey;\n}", ""]);
 
 // exports
 
@@ -170,29 +162,6 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-
-/***/ "../../../../css-loader/lib/url/escape.js":
-/***/ (function(module, exports) {
-
-module.exports = function escape(url) {
-    if (typeof url !== 'string') {
-        return url
-    }
-    // If url is already wrapped in quotes, remove them
-    if (/^['"].*['"]$/.test(url)) {
-        url = url.slice(1, -1);
-    }
-    // Should url be wrapped?
-    // See https://drafts.csswg.org/css-values-3/#urls
-    if (/["'() \t\n]/.test(url)) {
-        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
-    }
-
-    return url
 }
 
 

@@ -4,14 +4,14 @@
   }
 
   .fundo_personalizar{
-    background-image: linear-gradient(green, white);
+    background-image: linear-gradient(rgb(10, 152, 10), white);
     height: 120px;
     margin-bottom: 20px;
   }
-  h3 {
-      font-size: 30pt;
+  h4 {
+      font-size: 25pt;
       color: #fff;
-      text-shadow: 2px 2px #333;
+      text-shadow: 1px 1px #333;
       font-family: 'Crete Round', serif !important;
       margin: 20px auto 0 auto;
     }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
 import { Title }     from '@angular/platform-browser';
+import Typed from 'typed.js';
 
 @Component({
   selector: 'app-content',
@@ -10,6 +11,13 @@ import { Title }     from '@angular/platform-browser';
 })
 export class ContentComponent implements OnInit {
 
+  title = 'app';
+  source = "../../assets/img2.png";
+
+  color = "red";
+  local = "../../assets/img2.png";
+  local_aba = "../../assets/img_aba.png";
+  
   categorias = [{}];
   brindes = [{}];
   selectedMovie;
@@ -48,19 +56,19 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit() {
-    // const options = {
-    //   stringsElement: '#typed-strings',
-    //   strings: ['Visualize sua caneca em 3D. Experimente!', 'Escolha sua arte, com apenas 1 clique.'],
-    //   typeSpeed: 100,
-    //   backSpeed: 200,
-    //   backDelay: 300,
-    //   smartBackspace: true,
-    //   fadeOut: true,
-    //   showCursor: false,
-    //   startDelay: 1000,
-    //   loop: true
-    //   };
-    //   const typed = new Typed('.typing-element', options);
+    const options = {
+      stringsElement: '#typed-strings',
+      strings: ['Agora você pode visualizar nossos modelos de canecas diretamente de nosso site.', 'Basta clicar no botão abaixo e escolher um modelo.'],
+      typeSpeed: 40,
+      backSpeed: 200,
+      backDelay: 1300,
+      smartBackspace: true,
+      fadeOut: true,
+      showCursor: false,
+      startDelay: 1000,
+      loop: true
+      };
+      const typed = new Typed('.typing-element', options);
   }
 
   onClickSubmitSearch(busca) {

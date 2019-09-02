@@ -2,39 +2,32 @@
     margin-top: 80px;
 }
 
-.wrapper-content {
-    min-width: 100%;
-    min-height: 100%;
+.wrapper-contenttt {
+    min-height: 500px;
+    
     }
 .box-tile {
-    width: 500px;
-    height: 100px;
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    padding: 10px;
+    width: 600px;
+    height: 450px;
+    margin: 150px 0 0 0;
+    float: left;
     }
 .wrapper-content h1 {
-    font-size: 60pt;
-    color: #fff;
-    text-shadow: 2px 2px #333;
+    font-size: 30pt;
+    color: rgb(5, 151, 5);
+    text-shadow: 1px 1px #333;
     font-family: 'Crete Round', serif !important;
     }
 .tag {
     font-size: 2-pt;
-    color: chocolate;
+    color: rgb(5, 151, 5);
     font-weight: bold;
     }
 .bg_img{
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1000;
-    background: url("assets/banner_thebrindes.jpg") no-repeat;
-    background-size: cover;
+    width: 400px;
+    min-height: 500px;
+    float: right;
+    margin: 150px 0 0 0;
     }
 
 
