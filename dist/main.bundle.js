@@ -657,7 +657,7 @@ var ContentComponent = (function () {
     ContentComponent.prototype.ngOnInit = function () {
         var options = {
             stringsElement: '#typed-strings',
-            strings: ['Agora você pode visualizar nossos modelos de canecas diretamente de nosso site.', 'Basta clicar no botão abaixo e escolher um modelo.'],
+            strings: ['Agora você pode visualizar alguns de nossos modelos de canecas diretamente de nosso site.', 'Basta clicar no botão abaixo e escolher um modelo.'],
             typeSpeed: 40,
             backSpeed: 200,
             backDelay: 1300,
