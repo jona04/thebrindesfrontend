@@ -1,3 +1,4 @@
+import { ArteClienteComponent } from './../arte-cliente/arte-cliente.component';
 import { PersonalizarComponent } from './../personalizar/personalizar.component';
 import { BuscaComponent } from './../busca/busca.component';
 import { BrindesComponent } from './../brindes/brindes.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: '', component: ContentComponent },
   { path: 'empresa', component: EmpresaComponent },
   { path: 'personalizar-caneca-porcelana', component: PersonalizarComponent },
+  { path: 'cliente/:id', component: ArteClienteComponent },
   { path: 'categoria/:slug', component: CategoriaComponent },
   { path: 'brindes/:categoria/:brinde', component: BrindesComponent },
   { path: 'busca/:busca', component: BuscaComponent },

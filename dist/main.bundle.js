@@ -35,6 +35,7 @@ var ApiService = (function () {
     function ApiService(http) {
         this.http = http;
         this.baseurl = "https://thebrindesapi.herokuapp.com";
+        // baseurl = "http://127.0.0.1:8000";
         this.httpHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpHeaders */]({ 'Content-Type': 'application/json' });
     }
     ApiService.prototype.getAllCategorias = function () {
@@ -48,6 +49,9 @@ var ApiService = (function () {
     };
     ApiService.prototype.getAllBrindes = function () {
         return this.http.get(this.baseurl + '/api/brinde/', { headers: this.httpHeaders });
+    };
+    ApiService.prototype.getArteClienteCaneca = function (id) {
+        return this.http.get(this.baseurl + '/api/arteClienteCaneca/' + id + '/', { headers: this.httpHeaders });
     };
     ApiService.prototype.getOneCategoria = function (slug) {
         return this.http.get(this.baseurl + '/api/categoria/' + slug + '/', { headers: this.httpHeaders });
@@ -75,15 +79,16 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__personalizar_personalizar_component__ = __webpack_require__("../../../../../src/app/personalizar/personalizar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__busca_busca_component__ = __webpack_require__("../../../../../src/app/busca/busca.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__brindes_brindes_component__ = __webpack_require__("../../../../../src/app/brindes/brindes.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__content_content_component__ = __webpack_require__("../../../../../src/app/content/content.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__empresa_empresa_component__ = __webpack_require__("../../../../../src/app/empresa/empresa.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__categoria_categoria_component__ = __webpack_require__("../../../../../src/app/categoria/categoria.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__arte_cliente_arte_cliente_component__ = __webpack_require__("../../../../../src/app/arte-cliente/arte-cliente.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__personalizar_personalizar_component__ = __webpack_require__("../../../../../src/app/personalizar/personalizar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__busca_busca_component__ = __webpack_require__("../../../../../src/app/busca/busca.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__brindes_brindes_component__ = __webpack_require__("../../../../../src/app/brindes/brindes.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__content_content_component__ = __webpack_require__("../../../../../src/app/content/content.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__empresa_empresa_component__ = __webpack_require__("../../../../../src/app/empresa/empresa.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__categoria_categoria_component__ = __webpack_require__("../../../../../src/app/categoria/categoria.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -100,13 +105,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_3__content_content_component__["a" /* ContentComponent */] },
-    { path: 'empresa', component: __WEBPACK_IMPORTED_MODULE_4__empresa_empresa_component__["a" /* EmpresaComponent */] },
-    { path: 'personalizar-caneca-porcelana', component: __WEBPACK_IMPORTED_MODULE_0__personalizar_personalizar_component__["a" /* PersonalizarComponent */] },
-    { path: 'categoria/:slug', component: __WEBPACK_IMPORTED_MODULE_5__categoria_categoria_component__["a" /* CategoriaComponent */] },
-    { path: 'brindes/:categoria/:brinde', component: __WEBPACK_IMPORTED_MODULE_2__brindes_brindes_component__["a" /* BrindesComponent */] },
-    { path: 'busca/:busca', component: __WEBPACK_IMPORTED_MODULE_1__busca_busca_component__["a" /* BuscaComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_4__content_content_component__["a" /* ContentComponent */] },
+    { path: 'empresa', component: __WEBPACK_IMPORTED_MODULE_5__empresa_empresa_component__["a" /* EmpresaComponent */] },
+    { path: 'personalizar-caneca-porcelana', component: __WEBPACK_IMPORTED_MODULE_1__personalizar_personalizar_component__["a" /* PersonalizarComponent */] },
+    { path: 'cliente/:id', component: __WEBPACK_IMPORTED_MODULE_0__arte_cliente_arte_cliente_component__["a" /* ArteClienteComponent */] },
+    { path: 'categoria/:slug', component: __WEBPACK_IMPORTED_MODULE_6__categoria_categoria_component__["a" /* CategoriaComponent */] },
+    { path: 'brindes/:categoria/:brinde', component: __WEBPACK_IMPORTED_MODULE_3__brindes_brindes_component__["a" /* BrindesComponent */] },
+    { path: 'busca/:busca', component: __WEBPACK_IMPORTED_MODULE_2__busca_busca_component__["a" /* BuscaComponent */] },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -114,12 +121,12 @@ var AppRoutingModule = (function () {
     return AppRoutingModule;
 }());
 AppRoutingModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__angular_core__["b" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__angular_core__["b" /* NgModule */])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_7__angular_common__["e" /* CommonModule */],
-            __WEBPACK_IMPORTED_MODULE_8__angular_router__["a" /* RouterModule */].forRoot(routes, { preloadingStrategy: __WEBPACK_IMPORTED_MODULE_8__angular_router__["b" /* PreloadAllModules */] })
+            __WEBPACK_IMPORTED_MODULE_8__angular_common__["e" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_9__angular_router__["a" /* RouterModule */].forRoot(routes, { preloadingStrategy: __WEBPACK_IMPORTED_MODULE_9__angular_router__["b" /* PreloadAllModules */] })
         ],
-        exports: [__WEBPACK_IMPORTED_MODULE_8__angular_router__["a" /* RouterModule */]],
+        exports: [__WEBPACK_IMPORTED_MODULE_9__angular_router__["a" /* RouterModule */]],
         declarations: []
     })
 ], AppRoutingModule);
@@ -203,6 +210,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__brindes_brindes_component__ = __webpack_require__("../../../../../src/app/brindes/brindes.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__busca_busca_component__ = __webpack_require__("../../../../../src/app/busca/busca.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__personalizar_personalizar_component__ = __webpack_require__("../../../../../src/app/personalizar/personalizar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__arte_cliente_arte_cliente_component__ = __webpack_require__("../../../../../src/app/arte-cliente/arte-cliente.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -210,6 +218,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -241,7 +250,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_11__categoria_categoria_component__["a" /* CategoriaComponent */],
             __WEBPACK_IMPORTED_MODULE_12__brindes_brindes_component__["a" /* BrindesComponent */],
             __WEBPACK_IMPORTED_MODULE_13__busca_busca_component__["a" /* BuscaComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__personalizar_personalizar_component__["a" /* PersonalizarComponent */]
+            __WEBPACK_IMPORTED_MODULE_14__personalizar_personalizar_component__["a" /* PersonalizarComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__arte_cliente_arte_cliente_component__["a" /* ArteClienteComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -256,6 +266,94 @@ AppModule = __decorate([
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/arte-cliente/arte-cliente.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n  \n    /* keyframes for rotating animation */\n    \n      @keyframes spin {\n        from { transform: rotateY(160deg); }\n        to   { transform: rotateY(-20deg); }\n      }\n      \n      \n      .container {\n        width: 105px;\n        height: 400px;\n        position: relative;\n        perspective: 1400px;\n        margin: 10px auto;\n      }\n      \n      #carousel {\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        transform-style: preserve-3d;\n        animation: spin 10s infinite linear;\n        transition: all 1s linear;\n        \n      }\n  /*     \n      #carousel figure {\n        margin: 0;\n        display: block;\n        position: absolute;\n        \n        width: 105px;\n        height: 400px;\n        left: 10px;\n        top: 10px;\n      }\n       */\n      \n      .aba{\n        background: #fff;\n       }   \n      #carousel figure {\n        margin: 0;\n        display: block;\n        position: absolute;\n        \n        width: 56px;\n        height: 400px;\n        left: 10px;\n        top: 10px;\n      }\n      \n      #carousel figure:nth-child(1) { background-position: 280px 0px; transform: rotateY( -3deg ) translateZ( 150px ); }\n  \n      #carousel figure:nth-child(2) { background-position: 224px 0px; transform: rotateY( 18deg ) translateZ( 150px ); }\n      #carousel figure:nth-child(3) { background-position: 168px 0px; transform: rotateY(  39deg ) translateZ( 150px ); }\n      #carousel figure:nth-child(4) { background-position: 112px 0px; transform: rotateY( 60deg ) translateZ( 150px ); }\n      #carousel figure:nth-child(5) { background-position: 56px 0px; transform: rotateY(  81deg ) translateZ( 150px ); }\n      #carousel figure:nth-child(6) { background-image: url(" + escape(__webpack_require__("../../../../../src/assets/img3.png")) + "); width: 115px; transform: rotateY(   60deg ) translateZ( 0px ) translateX( 190px ); }\n      #carousel figure:nth-child(7) { transform: rotateY( 147deg ) translateZ( 150px ); }\n      #carousel figure:nth-child(8) { background-position: 840px 0px; transform: rotateY( 147deg ) translateZ( 150px ); }\n      \n      #carousel figure:nth-child(9) { background-image: url(" + escape(__webpack_require__("../../../../../src/assets/img3.png")) + "); width: 115px; transform: rotateY(   0deg ) translateZ( 0px ) translateX( 175px ); }\n  \n      #carousel figure:nth-child(10) { background-position: 784px 0px; transform: rotateY( 168deg ) translateZ( 150px ); }\n      \n      #carousel figure:nth-child(11) { background-position: 728px 0px; transform: rotateY( 189deg ) translateZ( 150px ); }\n      #carousel figure:nth-child(12) { background-position: 672px 0px; transform: rotateY( 210deg ) translateZ( 150px ); }\n      #carousel figure:nth-child(13) { background-position: 616px 0px; transform: rotateY( 231deg ) translateZ( 150px ); }\n      #carousel figure:nth-child(14) { background-position: 560px 0px; transform: rotateY( 252deg ) translateZ( 150px ); }\n    \n      \n      #carousel figure:nth-child(15) { background-position: 504px 0px; transform: rotateY( 273deg ) translateZ( 150px ); }\n      #carousel figure:nth-child(16) { background-position: 448px 0px; transform: rotateY( 294deg ) translateZ( 150px ); }\n  \n      #carousel figure:nth-child(17) { background-position: 392px 0px; transform: rotateY( 315deg ) translateZ( 150px ); }\n     \n      \n      #carousel figure:nth-child(18) { background-position: 336px 0px; transform: rotateY( 336deg ) translateZ( 150px ); }\n  \n      \n  \n      \n      /* #carousel figure:nth-child(1) { background-position: 315px 0px; transform: rotateY(   0deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(2) { background-position: 210px 0px; transform: rotateY(  36deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(3) { background-position: 105px 0px; transform: rotateY(  72deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(4) { background-image: url(\"../../assets/img3.png\"); width: 110px; transform: rotateY(   60deg ) translateZ( 0px ) translateX( 210px ); }\n      #carousel figure:nth-child(5) { transform: rotateY( 144deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(6) { background-position: 840px 0px; transform: rotateY( 180deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(7) { background-position: 735px 0px; transform: rotateY( 216deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(8) { background-position: 630px 0px; transform: rotateY( 252deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(9) { background-position: 525px 0px; transform: rotateY( 288deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(10) { background-position: 420px 0px; transform: rotateY( 324deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(11) { background-image: url(\"../../assets/img3.png\"); width: 110px; transform: rotateY(   0deg ) translateZ( 0px ) translateX( 210px ); }\n       */\n      /* esse é para o fundo primeiro, a a imagem cinza por tras feito no corel  */\n    /*\n    #carousel figure:nth-child(1) { background-position: 370px 0px; transform: rotateY(   0deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(2) { background-position: 265px 0px; transform: rotateY(  36deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(3) { background-position: 160px 0px; transform: rotateY(  72deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(4) { background-image: url(\"../assets/img3.png\"); width: 110px; transform: rotateY(   60deg ) translateZ( 0px ) translateX( 210px ); }\n      #carousel figure:nth-child(5) { background-position: 1000px 0px; transform: rotateY( 144deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(6) { background-position: 895px 0px; transform: rotateY( 180deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(7) { background-position: 790px 0px; transform: rotateY( 216deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(8) { background-position: 685px 0px; transform: rotateY( 252deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(9) { background-position: 580px 0px; transform: rotateY( 288deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(10) { background-position: 475px 0px; transform: rotateY( 324deg ) translateZ( 161px ); }\n      #carousel figure:nth-child(11) { background-image: url(\"../assets/img3.png\"); width: 110px; transform: rotateY(   0deg ) translateZ( 0px ) translateX( 210px ); }\n      \n      */", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/arte-cliente/arte-cliente.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<br><br><br><br><br>\n<div class=\"col-sm-12 col-md-5\">\n  <section class=\"container\">\n    <div id=\"carousel\">\n    \n        <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure>\n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure>\n      <figure class=\"aba\" [ngStyle]=\"{ 'background-image': 'url('+local_aba+')' }\"></figure>\n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure>\n      <figure></figure>\n\n      <figure class=\"aba\" [ngStyle]=\"{ 'background-image': 'url('+local_aba+')' }\"></figure>\n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure>\n    \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n\n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure>\n      \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n      <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> \n\n\n\n\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> 7 -->\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> 8 -->\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> 9 -->\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local_aba+')' }\"></figure> aba -->\n      <!-- <figure>1</figure> 1 -->\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> 2 -->\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> 3 -->\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> 4 -->\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> 5 -->\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local+')' }\"></figure> 6 -->\n      <!-- <figure [ngStyle]=\"{ 'background-image': 'url('+local_aba+')' }\"> </figure> aba -->\n    </div>\n  </section>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/arte-cliente/arte-cliente.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_service__ = __webpack_require__("../../../../../src/app/api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArteClienteComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ArteClienteComponent = (function () {
+    function ArteClienteComponent(api, route, router) {
+        this.api = api;
+        this.route = route;
+        this.router = router;
+        this.title = 'app';
+        this.source = "../../assets/img2.png";
+        this.color = "red";
+        this.local = "../../assets/img2.png";
+        this.local_aba = "../../assets/img_aba.png";
+        this.artecliente = { id: 0, image: "" };
+        this.param_busca = this.route.snapshot.paramMap.get("id");
+        this.getArteCliente(this.param_busca);
+    }
+    ArteClienteComponent.prototype.ngOnInit = function () {
+    };
+    ArteClienteComponent.prototype.getArteCliente = function (id) {
+        var _this = this;
+        this.api.getArteClienteCaneca(id).subscribe(function (data) {
+            _this.artecliente.id = data["id"];
+            _this.artecliente.image = data["image"];
+            _this.local = data["image"];
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    return ArteClienteComponent;
+}());
+ArteClienteComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
+        selector: 'app-arte-cliente',
+        template: __webpack_require__("../../../../../src/app/arte-cliente/arte-cliente.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/arte-cliente/arte-cliente.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]) === "function" && _c || Object])
+], ArteClienteComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=arte-cliente.component.js.map
 
 /***/ }),
 

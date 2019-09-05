@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 export class ApiService {
 
   baseurl = "https://thebrindesapi.herokuapp.com";
+  // baseurl = "http://127.0.0.1:8000";
   httpHeaders = new HttpHeaders({'Content-Type':'application/json'});
 
   constructor(private http: HttpClient) { }
@@ -30,6 +31,12 @@ getAllCategoriasArte(): Observable<any>{
 
 getAllBrindes(): Observable<any>{
   return this.http.get(this.baseurl+'/api/brinde/',
+    {headers: this.httpHeaders}
+  );
+}
+
+getArteClienteCaneca(id): Observable<any>{
+  return this.http.get(this.baseurl+'/api/arteClienteCaneca/'+id+'/',
     {headers: this.httpHeaders}
   );
 }

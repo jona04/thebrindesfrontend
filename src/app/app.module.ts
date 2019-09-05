@@ -16,6 +16,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { BrindesComponent } from './brindes/brindes.component';
 import { BuscaComponent } from './busca/busca.component';
 import { PersonalizarComponent } from './personalizar/personalizar.component';
+import { ArteClienteComponent } from './arte-cliente/arte-cliente.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PersonalizarComponent } from './personalizar/personalizar.component';
     CategoriaComponent,
     BrindesComponent,
     BuscaComponent,
-    PersonalizarComponent
+    PersonalizarComponent,
+    ArteClienteComponent
   ],
   imports: [
     BrowserModule,
