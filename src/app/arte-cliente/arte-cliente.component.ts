@@ -34,7 +34,10 @@ export class ArteClienteComponent implements OnInit {
       data => {
         this.artecliente.id = data["id"];
         this.artecliente.image = data["image"];
-        this.local = data["image"];
+
+        let re = /\ /gi;
+        var new_local = data["image"].replace(re, "+"); 
+        this.local = new_local;
       },
       error => {
         console.log(error)
