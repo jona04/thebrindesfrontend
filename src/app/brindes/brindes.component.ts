@@ -77,6 +77,7 @@ export class BrindesComponent implements OnInit {
     this.api.createOrcamento(orcamento).subscribe(
       data => {
         alert("Muito Obrigado!! Seu orçamento foi enviado com sucesso. Aguarde em quanto respondemos. Ou entre em contato em: (86) 99436-7255")
+        
       },
       error => {
         console.log(error)
