@@ -165,6 +165,7 @@ module.exports = "<app-header></app-header>\n\n<router-outlet></router-outlet>\n
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -172,11 +173,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'app';
+    function AppComponent(title) {
+        this.title = title;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.title.setTitle('The Brindes - Brindes Personalizados em Teresina e todo Brasil!');
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -184,9 +192,11 @@ AppComponent = __decorate([
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
-    })
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */]) === "function" && _a || Object])
 ], AppComponent);
 
+var _a;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -391,6 +401,7 @@ module.exports = "<!-- DIV CONTEUDO INDEDx -->\n\n    <div class=\"container mar
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_service__ = __webpack_require__("../../../../../src/app/api.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrindesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -405,12 +416,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var BrindesComponent = (function () {
-    function BrindesComponent(api, route, router) {
+    function BrindesComponent(api, route, router, title) {
         var _this = this;
         this.api = api;
         this.route = route;
         this.router = router;
+        this.title = title;
         this.categorias = [{}];
         this.brindes = [{}];
         this.categoria = { id: 0, name: "", slug: "" };
@@ -448,6 +461,7 @@ var BrindesComponent = (function () {
                         _this.brinde.fornecedores = element["fornecedores"];
                     }
                 });
+                _this.title.setTitle(_this.brinde.name + ' - The Brindes - Brindes Personalizados em Teresina e todo Brasil!');
             }, function (error) {
                 console.log(error);
             });
@@ -479,10 +493,10 @@ BrindesComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/brindes/brindes.component.html"),
         styles: [__webpack_require__("../../../../../src/app/brindes/brindes.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["d" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["b" /* Title */]) === "function" && _d || Object])
 ], BrindesComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=brindes.component.js.map
 
 /***/ }),
@@ -601,7 +615,8 @@ module.exports = "<!-- DIV CONTEUDO INDEDx -->\n<div class=\"container margem_to
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_service__ = __webpack_require__("../../../../../src/app/api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api_service__ = __webpack_require__("../../../../../src/app/api.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriaComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -615,12 +630,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CategoriaComponent = (function () {
-    function CategoriaComponent(api, route, router) {
+    function CategoriaComponent(api, route, router, title) {
         var _this = this;
         this.api = api;
         this.route = route;
         this.router = router;
+        this.title = title;
         this.categorias = [{}];
         this.brindes = [{}];
         this.categoria = { id: 0, name: "", slug: "" };
@@ -634,6 +651,7 @@ var CategoriaComponent = (function () {
                         _this.categoria.slug = element["slug"];
                     }
                 });
+                _this.title.setTitle(_this.categoria.name + ' - The Brindes - Brindes Personalizados em Teresina e todo Brasil!');
             }, function (error) {
                 console.log(error);
             });
@@ -662,10 +680,10 @@ CategoriaComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/categoria/categoria.component.html"),
         styles: [__webpack_require__("../../../../../src/app/categoria/categoria.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* Title */]) === "function" && _d || Object])
 ], CategoriaComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=categoria.component.js.map
 
 /***/ }),
@@ -722,12 +740,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ContentComponent = (function () {
-    function ContentComponent(api, router, titleService) {
+    function ContentComponent(api, router, title) {
         var _this = this;
         this.api = api;
         this.router = router;
-        this.titleService = titleService;
-        this.title = 'app';
+        this.title = title;
         this.source = "../../assets/img2.png";
         this.color = "red";
         this.local = "../../assets/img2.png";
@@ -751,10 +768,8 @@ var ContentComponent = (function () {
         this.getCategorias();
         this.getBrindes();
     }
-    ContentComponent.prototype.setTitle = function (newTitle) {
-        this.titleService.setTitle(newTitle);
-    };
     ContentComponent.prototype.ngOnInit = function () {
+        this.title.setTitle('The Brindes - Brindes Personalizados em Teresina e todo Brasil!');
         var options = {
             stringsElement: '#typed-strings',
             strings: ['Agora você pode visualizar alguns de nossos modelos de canecas diretamente de nosso site.', 'Basta clicar no botão abaixo e escolher um modelo.'],
@@ -819,6 +834,7 @@ module.exports = "<div class=\"container margem_topo_fixo\">\n\n  <div class=\"r
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmpresaComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -831,14 +847,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var EmpresaComponent = (function () {
-    function EmpresaComponent(router) {
+    function EmpresaComponent(router, title) {
         this.router = router;
+        this.title = title;
     }
     EmpresaComponent.prototype.onClickSubmitSearch = function (busca) {
         this.router.navigateByUrl('/busca/' + busca.campo_busca);
     };
     EmpresaComponent.prototype.ngOnInit = function () {
+        this.title.setTitle('Saiba mais sobre a The Brindes - Brindes Personalizados em Teresina e todo Brasil!');
     };
     return EmpresaComponent;
 }());
@@ -848,10 +867,10 @@ EmpresaComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/empresa/empresa.component.html"),
         styles: [__webpack_require__("../../../../../src/app/empresa/empresa.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* Title */]) === "function" && _b || Object])
 ], EmpresaComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=empresa.component.js.map
 
 /***/ }),
@@ -1030,6 +1049,7 @@ module.exports = "\n<div class=\"fundo\">\n\n    <div class=\"row fundo_personal
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_service__ = __webpack_require__("../../../../../src/app/api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonalizarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1042,11 +1062,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var PersonalizarComponent = (function () {
-    function PersonalizarComponent(api) {
+    function PersonalizarComponent(api, title) {
         var _this = this;
         this.api = api;
-        this.title = 'app';
+        this.title = title;
         this.source = "../../assets/img2.png";
         this.color = "red";
         this.local = "../../assets/img2.png";
@@ -1101,6 +1122,7 @@ var PersonalizarComponent = (function () {
         console.log(this.artescanecasNova);
     };
     PersonalizarComponent.prototype.ngOnInit = function () {
+        this.title.setTitle('Visualize sua caneca em 3D. Monte sua caneca online - Brindes Personalizados em Teresina e todo Brasil!');
     };
     return PersonalizarComponent;
 }());
@@ -1110,10 +1132,10 @@ PersonalizarComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/personalizar/personalizar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/personalizar/personalizar.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* Title */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* Title */]) === "function" && _b || Object])
 ], PersonalizarComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=personalizar.component.js.map
 
 /***/ }),

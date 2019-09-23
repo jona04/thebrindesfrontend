@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-personalizar',
@@ -8,7 +10,6 @@ import { ApiService } from '../api.service';
 })
 export class PersonalizarComponent implements OnInit {
 
-  title = 'app';
   source = "../../assets/img2.png";
 
   color = "red";
@@ -19,7 +20,7 @@ export class PersonalizarComponent implements OnInit {
   artescanecasNova = [{}];
   categoriasarte = [{}];
 
-  constructor(private api:ApiService) {
+  constructor(private api:ApiService,private title: Title) {
     this.getArtesCanecas();
     this.getCategoriasArte();
    }
@@ -85,6 +86,7 @@ export class PersonalizarComponent implements OnInit {
     console.log(this.artescanecasNova);
   }
   ngOnInit() {
+    this.title.setTitle('Visualize sua caneca em 3D. Monte sua caneca online - Brindes Personalizados em Teresina e todo Brasil!');
   }
 
 }

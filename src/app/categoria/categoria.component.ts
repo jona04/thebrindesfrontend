@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title }     from '@angular/platform-browser';
 
 import { ApiService } from '../api.service';
 import { element } from 'protractor';
@@ -14,7 +15,7 @@ export class CategoriaComponent implements OnInit {
   brindes = [{}];
   categoria = {id:0,name:"",slug:""};
   param;
-  constructor(private api:ApiService, private route: ActivatedRoute,private router: Router) { 
+  constructor(private api:ApiService, private route: ActivatedRoute,private router: Router,private title: Title) { 
     this.param = this.route.snapshot.paramMap.get("slug");
 
     this.getAllCategorias();
@@ -31,7 +32,9 @@ export class CategoriaComponent implements OnInit {
               this.categoria.name = element["name"];
               this.categoria.slug = element["slug"];
           }
-        })
+        });
+        this.title.setTitle(this.categoria.name+' - The Brindes - Brindes Personalizados em Teresina e todo Brasil!');
+
       },
       error => {
         console.log(error)

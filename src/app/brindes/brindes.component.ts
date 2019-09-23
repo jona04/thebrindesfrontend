@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import {Router} from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-brindes',
@@ -18,7 +19,7 @@ export class BrindesComponent implements OnInit {
   param_cat;
   orcamento;
 
-  constructor(private api:ApiService, private route: ActivatedRoute,private router: Router) { 
+  constructor(private api:ApiService, private route: ActivatedRoute,private router: Router,private title: Title) { 
     this.param_brinde = this.route.snapshot.paramMap.get("brinde");
     this.param_cat = this.route.snapshot.paramMap.get("categoria");
     this.orcamento = {name:'',email:'',phone:'',quantity:0};
@@ -64,7 +65,9 @@ export class BrindesComponent implements OnInit {
               this.brinde.categoria = element["categoria"];
               this.brinde.fornecedores = element["fornecedores"];
           }
-        })
+        });
+        this.title.setTitle(this.brinde.name+' - The Brindes - Brindes Personalizados em Teresina e todo Brasil!');
+
       },
       error => {
         console.log(error)

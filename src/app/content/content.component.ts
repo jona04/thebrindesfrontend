@@ -11,7 +11,6 @@ import Typed from 'typed.js';
 })
 export class ContentComponent implements OnInit {
 
-  title = 'app';
   source = "../../assets/img2.png";
 
   color = "red";
@@ -24,13 +23,10 @@ export class ContentComponent implements OnInit {
 
   constructor(private api:ApiService,
     private router: Router,
-    private titleService: Title){
+    private title: Title){
 
     this.getCategorias();
     this.getBrindes();
-  }
-  public setTitle( newTitle: string) {
-    this.titleService.setTitle( newTitle  );
   }
 
   getCategorias = () => {
@@ -56,7 +52,9 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.title.setTitle('The Brindes - Brindes Personalizados em Teresina e todo Brasil!');
     const options = {
+      
       stringsElement: '#typed-strings',
       strings: ['Agora você pode visualizar alguns de nossos modelos de canecas diretamente de nosso site.', 'Basta clicar no botão abaixo e escolher um modelo.'],
       typeSpeed: 40,
