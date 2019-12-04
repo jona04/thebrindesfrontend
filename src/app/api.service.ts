@@ -49,6 +49,7 @@ getOneCategoria(slug): Observable<any>{
 
 createOrcamento(orcamento): Observable<any>{
   const body = {name:orcamento.name,email:orcamento.email,phone:orcamento.phone,quantity:orcamento.quantity,brindes:orcamento.brindes};
+  // print(body)
   return this.http.post(this.baseurl+'/api/orcamento/', body,
   {headers: this.httpHeaders}
 );
