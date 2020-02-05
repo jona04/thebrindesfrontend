@@ -1,3 +1,9 @@
+#canvas {
+  height: 500px;
+  border: 1px solid rgb(13, 140, 91);
+  background-color: brown;
+}
+
 .fundo{
     padding: 50px;
     margin-top: 50px;
@@ -42,9 +48,9 @@
       width: 100%;
       height: 100%;
       position: absolute;
-      transform-style: preserve-3d;
+      /* transform-style: preserve-3d;
       animation: spin 10s infinite linear;
-      transition: all 1s linear;
+      transition: all 1s linear; */
       
     }
 /*     
