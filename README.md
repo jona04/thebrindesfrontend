@@ -1,11 +1,13 @@
 # THE brindes Frontend
 
-Projeto desenvolvido para empresa THE Brindes.
-O backend foi projetado em python e django.
+The Project was developed to THE Brindes.
 
-O frontend foi desenvolvido com angular.
+The Backend was projected in Python and Django.
 
-A biblioteca utilizada para criar o objeto 3d no browser foi o threejs. Para modelar a caneca foi utilizado o software blender.
+The Frontend was developed with Angular.
+
+The library Three.JS was used to create the 3D objects in Browser. To model the mug was used the software Blender.
+
 
 ![](gif_thebrindes_3d.gif)
 
@@ -13,4 +15,4 @@ A biblioteca utilizada para criar o objeto 3d no browser foi o threejs. Para mod
 
 # Mobile
 
-Versão mobile da aplicação está sendo desenvolvida com o framework React Native.
+The Mobile Version is been developed with the framework React Native.
